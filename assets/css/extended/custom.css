@@ -1,45 +1,46 @@
-/* ─── Light mode ─────────────────────────────────────────── */
+/* ─── Light mode — warm linen palette (hugo-paper inspired) ─ */
 :root {
-    --theme:       #f4f6fb;          /* soft blue-white page bg   */
-    --entry:       #ffffff;          /* card / post entry bg      */
-    --primary:     #1a1f36;          /* headings & body text      */
-    --secondary:   #5a6380;          /* meta text, dates, etc.    */
-    --tertiary:    #e4e8f4;          /* subtle surface bg         */
-    --content:     #2b3055;          /* post body text            */
-    --code-block-bg: #1e2235;        /* fenced code block bg      */
-    --code-bg:     #e8ecf8;          /* inline code bg            */
-    --border:      #d0d8ee;          /* dividers & borders        */
-    --radius:      6px;
+    --theme:         #faf8f2;          /* warm linen page bg        */
+    --entry:         #faf8f2;          /* post entry bg (flat look) */
+    --primary:       #2c2825;          /* warm dark brown text      */
+    --secondary:     #8a8078;          /* muted warm gray           */
+    --tertiary:      #f0ece0;          /* subtle warm surface       */
+    --content:       #3a3530;          /* body text                 */
+    --code-block-bg: #2c2825;          /* code block bg             */
+    --code-bg:       #ede9df;          /* inline code bg            */
+    --border:        #e0d8c8;          /* warm dividers             */
+    --radius:        4px;
 }
 
-/* ─── Dark mode ──────────────────────────────────────────── */
+/* ─── Dark mode — warm dark (candlelight, not cold navy) ──── */
 :root[data-theme="dark"] {
-    --theme:       #0f1120;          /* deep navy page bg         */
-    --entry:       #181c2e;          /* card bg                   */
-    --primary:     #e8eaf6;          /* headings & body text      */
-    --secondary:   #8b93b8;          /* meta text                 */
-    --tertiary:    #1e2235;          /* subtle surface bg         */
-    --content:     #ccd0e8;          /* post body text            */
-    --code-block-bg: #12152a;        /* code block bg             */
-    --code-bg:     #1e2235;          /* inline code bg            */
-    --border:      #2a3050;          /* dividers                  */
+    --theme:         #1c1a17;          /* warm near-black           */
+    --entry:         #1c1a17;          /* flat — same as page bg    */
+    --primary:       #f0ebe0;          /* warm off-white text       */
+    --secondary:     #a09880;          /* warm muted tan            */
+    --tertiary:      #2a2720;          /* subtle warm surface       */
+    --content:       #d8d0c0;          /* body text                 */
+    --code-block-bg: #141210;          /* code block bg             */
+    --code-bg:       #2a2720;          /* inline code bg            */
+    --border:        #3a3530;          /* warm dark dividers        */
 }
 
-/* ─── Accent colour (links, hover states) ────────────────── */
+/* ─── Accent colour — terracotta/sienna ─────────────────────
+   Warm and readable; echoes the "linen" palette accent        */
 a,
 .post-title a:hover,
 .entry-title a:hover {
-    color: #4f6ef7;
+    color: #b5541c;
 }
 a:hover {
-    color: #7b93fa;
+    color: #d4612a;
 }
 
 :root[data-theme="dark"] a {
-    color: #7b93fa;
+    color: #e07a45;
 }
 :root[data-theme="dark"] a:hover {
-    color: #a5b8ff;
+    color: #f0986a;
 }
 
 /* ─── Navigation bar ─────────────────────────────────────── */
@@ -48,30 +49,66 @@ a:hover {
     border-bottom: 1px solid var(--border);
 }
 
-/* ─── Post cards — subtle lift on hover ─────────────────── */
+/* ─── Post list — flat, minimal, hugo-paper style ───────────
+   Remove card boxing; entries are just clean rows             */
 .post-entry {
-    border-radius: var(--radius);
-    transition: box-shadow 0.18s ease, transform 0.18s ease;
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid var(--border);
+    border-radius: 0;
+    padding: 1.1rem 0;
+    margin: 0;
+    box-shadow: none;
+}
+.post-entry:last-child {
+    border-bottom: none;
 }
 .post-entry:hover {
-    box-shadow: 0 4px 18px rgba(79, 110, 247, 0.12);
-    transform: translateY(-2px);
+    background: transparent;
+    box-shadow: none;
+    transform: none;
 }
 
-/* ─── Headings — slightly bolder brand feel ─────────────── */
+/* Post entry title — slightly smaller, cleaner */
+.entry-title {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 0.2rem;
+}
+
+/* Summary text under each title */
+.entry-content {
+    font-size: 0.9rem;
+    color: var(--secondary);
+    margin: 0.2rem 0 0;
+}
+
+/* Date/meta line */
+.entry-meta {
+    font-size: 0.82rem;
+    color: var(--secondary);
+}
+
+/* ─── Home info — centered, profile-style ────────────────── */
+.home-info-container {
+    text-align: center;
+    border-left: none;
+    padding: 2.5rem 0 1.5rem;
+}
+.home-info-container .post-title {
+    font-size: 1.6rem;
+    font-weight: 700;
+}
+
+/* ─── Headings ───────────────────────────────────────────── */
 h1, h2, h3 {
-    letter-spacing: -0.02em;
+    letter-spacing: -0.01em;
+    font-weight: 700;
 }
 
 /* ─── Inline code ────────────────────────────────────────── */
 code {
-    border-radius: 4px;
+    border-radius: 3px;
     padding: 1px 5px;
     font-size: 0.88em;
-}
-
-/* ─── Home info panel ────────────────────────────────────── */
-.home-info-container {
-    border-left: 4px solid #4f6ef7;
-    padding-left: 1.2rem;
 }
