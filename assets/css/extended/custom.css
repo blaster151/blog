@@ -1,0 +1,77 @@
+/* ─── Light mode ─────────────────────────────────────────── */
+:root {
+    --theme:       #f4f6fb;          /* soft blue-white page bg   */
+    --entry:       #ffffff;          /* card / post entry bg      */
+    --primary:     #1a1f36;          /* headings & body text      */
+    --secondary:   #5a6380;          /* meta text, dates, etc.    */
+    --tertiary:    #e4e8f4;          /* subtle surface bg         */
+    --content:     #2b3055;          /* post body text            */
+    --code-block-bg: #1e2235;        /* fenced code block bg      */
+    --code-bg:     #e8ecf8;          /* inline code bg            */
+    --border:      #d0d8ee;          /* dividers & borders        */
+    --radius:      6px;
+}
+
+/* ─── Dark mode ──────────────────────────────────────────── */
+:root[data-theme="dark"] {
+    --theme:       #0f1120;          /* deep navy page bg         */
+    --entry:       #181c2e;          /* card bg                   */
+    --primary:     #e8eaf6;          /* headings & body text      */
+    --secondary:   #8b93b8;          /* meta text                 */
+    --tertiary:    #1e2235;          /* subtle surface bg         */
+    --content:     #ccd0e8;          /* post body text            */
+    --code-block-bg: #12152a;        /* code block bg             */
+    --code-bg:     #1e2235;          /* inline code bg            */
+    --border:      #2a3050;          /* dividers                  */
+}
+
+/* ─── Accent colour (links, hover states) ────────────────── */
+a,
+.post-title a:hover,
+.entry-title a:hover {
+    color: #4f6ef7;
+}
+a:hover {
+    color: #7b93fa;
+}
+
+:root[data-theme="dark"] a {
+    color: #7b93fa;
+}
+:root[data-theme="dark"] a:hover {
+    color: #a5b8ff;
+}
+
+/* ─── Navigation bar ─────────────────────────────────────── */
+.nav {
+    background: var(--theme);
+    border-bottom: 1px solid var(--border);
+}
+
+/* ─── Post cards — subtle lift on hover ─────────────────── */
+.post-entry {
+    border-radius: var(--radius);
+    transition: box-shadow 0.18s ease, transform 0.18s ease;
+}
+.post-entry:hover {
+    box-shadow: 0 4px 18px rgba(79, 110, 247, 0.12);
+    transform: translateY(-2px);
+}
+
+/* ─── Headings — slightly bolder brand feel ─────────────── */
+h1, h2, h3 {
+    letter-spacing: -0.02em;
+}
+
+/* ─── Inline code ────────────────────────────────────────── */
+code {
+    border-radius: 4px;
+    padding: 1px 5px;
+    font-size: 0.88em;
+}
+
+/* ─── Home info panel ────────────────────────────────────── */
+.home-info-container {
+    border-left: 4px solid #4f6ef7;
+    padding-left: 1.2rem;
+}
