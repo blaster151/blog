@@ -10,7 +10,7 @@ I had to laugh at this one.
 
 The page says: **"You're giving feedback on a new version of ChatGPT."** Then it presents two responses for comparison.
 
-![Screenshot of the A/B test comparing "That comes out to 349." with "That comes out to 349 👍"](/images/posts/funniest-ab-test.png)
+![Screenshot of the A/B test comparing "That comes out to 349." with "That comes out to 349 👍"](/blog/images/posts/funniest-ab-test.png)
 
 Response 1:
 
